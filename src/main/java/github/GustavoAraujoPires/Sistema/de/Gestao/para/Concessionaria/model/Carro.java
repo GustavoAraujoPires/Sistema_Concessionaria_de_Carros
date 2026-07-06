@@ -6,17 +6,23 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Data
-public class Vendedor {
+public class Carro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String nome;
-    private String cpf;
-    private String telefone;
-    private String email;
+    private String modelo;
+    private String marca;
+    private String cor;
+    private LocalDate ano;
+    private Double preco;
+    private String placa;
+    private String combustivel;
+    private List<StatusCarro> status;
 }
