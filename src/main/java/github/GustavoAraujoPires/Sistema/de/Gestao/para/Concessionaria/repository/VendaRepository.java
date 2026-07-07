@@ -1,4 +1,4 @@
-package repository;
+package github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.repository;
 
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.model.Venda;
 import org.springframework.data.jpa.repository.JpaRepository;
