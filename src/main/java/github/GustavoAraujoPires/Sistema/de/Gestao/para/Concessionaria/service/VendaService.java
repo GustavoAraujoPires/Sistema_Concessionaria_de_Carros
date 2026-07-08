@@ -1,7 +1,6 @@
 package github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.service;
 
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.exception.IdNaoEncontradoException;
-import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.model.Cliente;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.model.Venda;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.repository.CarroRepository;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.repository.ClienteRepository;
