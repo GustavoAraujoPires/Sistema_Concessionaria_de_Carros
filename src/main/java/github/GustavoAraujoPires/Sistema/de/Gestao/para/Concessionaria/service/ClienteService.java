@@ -31,6 +31,13 @@ public class ClienteService {
         return repository.findById(id).orElseThrow(()-> new IdNaoEncontradoException("Id não encontrado !!"));
     }
 
+    public Cliente buscarPorCpf(String cpf){
+        if (cpf.isEmpty()){
+            throw new ClienteNaoEncontradoException("CPF não encontrado");
+        }
+        return repository.findByCpf(cpf);
+    }
+
     public Cliente atualizar(UUID id, Cliente cliente){
         var Cliente = repository.findById(id).orElseThrow(() -> new IdNaoEncontradoException("Id não encontrado !!"));
         Cliente.setNome(cliente.getNome());

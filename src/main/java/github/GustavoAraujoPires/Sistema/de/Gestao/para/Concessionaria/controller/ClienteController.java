@@ -2,6 +2,7 @@ package github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.controll
 
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.controller.dto.ClienteDTO;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.controller.mappers.ClienteMappers;
+import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.exception.ClienteNaoEncontradoException;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.model.Cliente;
 import github.GustavoAraujoPires.Sistema.de.Gestao.para.Concessionaria.service.ClienteService;
 import jakarta.validation.Valid;
@@ -32,6 +33,15 @@ public class ClienteController {
     public Cliente buscarPorId (@PathVariable UUID id){
         return service.buscarPorId(id);
     }
+
+    @GetMapping("{cpf}")
+    public Cliente buscarPorCpf(@PathVariable String cpf){
+        if(cpf.isEmpty()){
+            throw new ClienteNaoEncontradoException("Cliente não encontrado, com esse CPF");
+        }
+        return service.buscarPorCpf(cpf);
+    }
+
 
     @GetMapping
     @ResponseStatus(HttpStatus.CREATED)
